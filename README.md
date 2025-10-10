@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# ☕ Coffee Shop Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Coffee Shop**, a modern and visually engaging website built with **React**, **Vite**, and **Tailwind CSS** — designed to capture the warm, inviting essence of a real coffee experience online.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features
 
-## React Compiler
+- 🏠 **Home Page**
+  - Hero section with vibrant coffee imagery
+  - Featured product carousel
+  - Testimonials from happy customers  
+  - Newsletter signup and social links
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📖 **About Page**
+  - The story behind the coffee
+  - Mission, vision, and sustainability focus
 
-## Expanding the ESLint configuration
+- 🛍️ **Menu / Products Page**
+  - Browse coffee types, pastries, and offers
+  - Interactive design with hover and transition effects
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📞 **Contact Page**
+  - Google map, contact form, and social media integration
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🧰 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Tool | Purpose |
+|------|----------|
+| ⚛️ **React + Vite** | Fast modern frontend |
+| 🎨 **Tailwind CSS** | Elegant, responsive styling |
+| 🧩 **Swiper.js** | Smooth product carousel |
+| ⚙️ **TypeScript** | Reliable, type-safe code |
+| 🚀 **GitHub Pages / Vercel** | Easy deployment options |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/jiregnaworku/Coffee-shop-frontend.git
+cd Coffee-shop-frontend
+npm install
+
+Run the development server:
+
+npm run dev
+
+Then open http://localhost:5173 in your browser.
