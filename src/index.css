@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Coffee Theme Colors */
+  --coffee-primary: #8B4513;     /* Coffee bean brown (primary) */
+  --coffee-secondary: #F5DEB3;   /* Latte cream (secondary background) */
+  --coffee-accent: #D2691E;      /* Bright caramel (buttons) */
+  --coffee-text: #3E2723;        /* Espresso (text) */
+  --coffee-cherry: #A0522D;      /* Coffee cherry (accent) */
+  --coffee-leaf: #7CB342;       /* Coffee leaf green (accent) */
+  --coffee-light: #FDF5E6;      /* Light cream (background) */
+  --coffee-warm: #FFFAF0;       /* Warm white (background) */
+}
+
+:root.dark {
+  --coffee-primary: #A0522D;     /* Coffee cherry (primary in dark) */
+  --coffee-secondary: #3E2723;   /* Espresso (secondary in dark) */
+  --coffee-accent: #F4A460;      /* Sandy brown (accent in dark) */
+  --coffee-text: #FDF5E6;        /* Light cream (text in dark) */
+  --coffee-cherry: #D2691E;      /* Bright caramel (cherry in dark) */
+  --coffee-leaf: #8BC34A;       /* Light green (leaf in dark) */
+  --coffee-light: #2C1810;       /* Dark coffee (light in dark) */
+  --coffee-warm: #1A0E08;       /* Very dark (warm in dark) */
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+.text-coffee-primary { color: var(--coffee-primary); }
+.text-coffee-accent { color: var(--coffee-accent); }
+.text-coffee-text { color: var(--coffee-text); }
+.text-coffee-cherry { color: var(--coffee-cherry); }
+.text-coffee-leaf { color: var(--coffee-leaf); }
+.bg-coffee-primary { background-color: var(--coffee-primary); }
+.bg-coffee-secondary { background-color: var(--coffee-secondary); }
+.bg-coffee-accent { background-color: var(--coffee-accent); }
+.bg-coffee-text { background-color: var(--coffee-text); }
+.bg-coffee-cherry { background-color: var(--coffee-cherry); }
+.bg-coffee-leaf { background-color: var(--coffee-leaf); }
+.bg-coffee-light { background-color: var(--coffee-light); }
+.bg-coffee-warm { background-color: var(--coffee-warm); }
+
+.border-coffee-primary { border-color: var(--coffee-primary); }
+.border-coffee-accent { border-color: var(--coffee-accent); }
+.border-coffee-cherry { border-color: var(--coffee-cherry); }
+
+.hover\:text-coffee-primary:hover { color: var(--coffee-primary); }
+.hover\:text-coffee-accent:hover { color: var(--coffee-accent); }
+.hover\:text-coffee-cherry:hover { color: var(--coffee-cherry); }
+.hover\:text-coffee-leaf:hover { color: var(--coffee-leaf); }
+
+.hover\:bg-coffee-primary:hover { background-color: var(--coffee-primary); }
+.hover\:bg-coffee-accent:hover { background-color: var(--coffee-accent); }
+.hover\:bg-coffee-cherry:hover { background-color: var(--coffee-cherry); }
+.hover\:bg-coffee-leaf:hover { background-color: var(--coffee-leaf); }
+
+.focus\:ring-coffee-primary:focus { --tw-ring-color: var(--coffee-primary); }
+.focus\:ring-coffee-accent:focus { --tw-ring-color: var(--coffee-accent); }
+
+/* Custom Gradient Background */
+.bg-coffee-gradient {
+  background: #2A7B9B;
+  background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 6%, rgba(237, 221, 83, 1) 100%);
+}
+}
