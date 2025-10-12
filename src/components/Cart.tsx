@@ -6,9 +6,10 @@ interface CartProps {
   updateQuantity: (itemId: number, quantity: number) => void;
   removeItem: (itemId: number) => void;
   clearCart: () => void;
+  onCheckout?: () => void;
 }
 
-const Cart: React.FC<CartProps> = ({ cart, updateQuantity, removeItem, clearCart }) => {
+const Cart: React.FC<CartProps> = ({ cart, updateQuantity, removeItem, clearCart, onCheckout }) => {
   const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
   if (cart.length === 0) {
@@ -109,7 +110,7 @@ const Cart: React.FC<CartProps> = ({ cart, updateQuantity, removeItem, clearCart
               Clear Cart
             </button>
             <button
-              onClick={() => alert('Checkout functionality would be implemented here!')}
+              onClick={onCheckout || (() => alert('Checkout functionality would be implemented here!'))}
               className="flex-1 bg-coffee-600 dark:bg-coffee-500 hover:bg-coffee-700 dark:hover:bg-coffee-400 text-white dark:text-gray-900 px-6 py-3 rounded-md font-medium transition-all duration-300"
             >
               Checkout

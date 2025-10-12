@@ -9,7 +9,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ goToHome, goToAbout, goToContact }) => {
   return (
-    <footer className="bg-coffee-gradient text-white relative overflow-hidden">
+    <footer className="bg-site-gradient text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -25,17 +25,17 @@ const Footer: React.FC<FooterProps> = ({ goToHome, goToAbout, goToContact }) => 
             {/* Brand Column */}
             <div className="lg:col-span-1">
               <h3 className="text-xl font-bold text-white mb-4">Coffee Shop</h3>
-              <p className="text-orange-100 leading-relaxed mb-6">
+              <p className="text-blue-100 leading-relaxed mb-6">
                 Crafting exceptional coffee experiences since 2020. Every cup tells a story of passion and dedication.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-white hover:text-coffee-accent transition-colors duration-300">
+                <a href="https://www.facebook.com/profile.php?id=61551666763445" className="text-white hover:text-site-accent transition-colors duration-300">
                   <FaFacebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-white hover:text-coffee-accent transition-colors duration-300">
+                <a href="https://www.instagram.com/jirocoffee.et/" className="text-white hover:text-site-accent transition-colors duration-300">
                   <FaInstagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-white hover:text-coffee-accent transition-colors duration-300">
+                <a href="https://twitter.com/jirocoffee.et" className="text-white hover:text-site-accent transition-colors duration-300">
                   <FaTwitter className="w-5 h-5" />
                 </a>
               </div>
@@ -48,7 +48,7 @@ const Footer: React.FC<FooterProps> = ({ goToHome, goToAbout, goToContact }) => 
                 <li>
                   <button
                     onClick={goToHome}
-                    className="text-orange-100 hover:text-coffee-accent transition-colors duration-300 hover:translate-x-1 inline-block"
+                    className="text-blue-100 hover:text-site-accent transition-colors duration-300 hover:translate-x-1 inline-block"
                   >
                     Our Menu
                   </button>
@@ -56,7 +56,7 @@ const Footer: React.FC<FooterProps> = ({ goToHome, goToAbout, goToContact }) => 
                 <li>
                   <button
                     onClick={goToAbout}
-                    className="text-orange-100 hover:text-coffee-accent transition-colors duration-300 hover:translate-x-1 inline-block"
+                    className="text-blue-100 hover:text-site-accent transition-colors duration-300 hover:translate-x-1 inline-block"
                   >
                     About Us
                   </button>
@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ goToHome, goToAbout, goToContact }) => 
                 <li>
                   <button
                     onClick={goToContact}
-                    className="text-orange-100 hover:text-coffee-accent transition-colors duration-300 hover:translate-x-1 inline-block"
+                    className="text-blue-100 hover:text-site-accent transition-colors duration-300 hover:translate-x-1 inline-block"
                   >
                     Contact
                   </button>
@@ -78,19 +78,19 @@ const Footer: React.FC<FooterProps> = ({ goToHome, goToAbout, goToContact }) => 
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
                   <FaMapMarkerAlt className="text-coffee-accent mt-1 flex-shrink-0" />
-                  <span className="text-orange-100">123 Coffee Street<br />Brewtown, BC V1A 2B3</span>
+                  <span className="text-blue-100">Nekemt,Bord,Nashinal hospital Stret<br />Nekemt, E/Wollega</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <FaPhone className="text-coffee-accent flex-shrink-0" />
-                  <span className="text-orange-100">(555) 123-4567</span>
+                  <span className="text-blue-100">(+251) 918-348-141</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <FaEnvelope className="text-coffee-accent flex-shrink-0" />
-                  <span className="text-orange-100">hello@coffeeshop.com</span>
+                  <span className="text-blue-100">hello@Jirocoffee.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <FaClock className="text-coffee-accent flex-shrink-0" />
-                  <span className="text-orange-100">Mon-Fri: 7AM-8PM<br />Sat-Sun: 8AM-9PM</span>
+                  <span className="text-blue-100">Mon-Fri: 7AM-8PM<br />Sat-Sun: 8AM-9PM</span>
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@ const Footer: React.FC<FooterProps> = ({ goToHome, goToAbout, goToContact }) => 
             {/* Newsletter */}
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Newsletter</h4>
-              <p className="text-orange-100 mb-4">
+              <p className="text-blue-100 mb-4">
                 Subscribe to get special offers, free giveaways, and delicious coffee updates.
               </p>
               <div className="flex">
@@ -116,16 +116,16 @@ const Footer: React.FC<FooterProps> = ({ goToHome, goToAbout, goToContact }) => 
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800">
+        <div className="border-t border-blue-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} Coffee Shop. All rights reserved.
+              <div className="text-white-400 text-sm">
+                © {new Date().getFullYear()} Jiro Coffee Shop. All rights reserved.
               </div>
-              <div className="flex space-x-6 text-sm text-gray-400">
-                <a href="#" className="hover:text-coffee-accent transition-colors duration-300">Privacy Policy</a>
-                <a href="#" className="hover:text-coffee-accent transition-colors duration-300">Terms of Service</a>
-                <a href="#" className="hover:text-coffee-accent transition-colors duration-300">Cookie Policy</a>
+              <div className="flex space-x-6 text-sm text-black-400">
+                <a href="#" className="hover:text-site-accent transition-colors duration-300">Privacy Policy</a>
+                <a href="#" className="hover:text-site-accent transition-colors duration-300">Terms of Service</a>
+                <a href="#" className="hover:text-site-accent transition-colors duration-300">Cookie Policy</a>
               </div>
             </div>
           </div>

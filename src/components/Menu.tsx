@@ -29,81 +29,97 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
   };
 
   return (
-    <div className="min-h-screen bg-coffee-warm transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-b from-site-cream via-site-warm/20 to-site-cream py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold text-coffee-primary mb-4 transition-colors duration-300">Our Menu</h1>
-          <p className="text-lg lg:text-xl text-coffee-text max-w-2xl mx-auto leading-relaxed transition-colors duration-300">
+        <div className="text-center mb-16 animate-fade-in">
+          <h1 className="text-5xl lg:text-6xl font-serif font-bold text-site-primary mb-6">Our Menu</h1>
+          <p className="text-xl lg:text-2xl text-site-text/80 max-w-3xl mx-auto leading-relaxed font-light">
             Discover our carefully crafted selection of premium coffee drinks, fresh pastries, and delicious bites.
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {menuCategories.map(category => (
+        <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up">
+          {menuCategories.map((category, i) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 lg:px-6 py-2 lg:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
+              className={`px-6 lg:px-8 py-3 lg:py-4 rounded-2xl font-medium transition-all duration-500 transform hover:scale-105 text-lg relative overflow-hidden group animate-fade-in-up ${
                 selectedCategory === category
-                  ? 'bg-coffee-accent text-white shadow-lg scale-105'
-                  : 'bg-coffee-light text-coffee-text border border-coffee-300 hover:bg-coffee-200 shadow-md hover:shadow-lg'
+                  ? 'bg-site-gold text-site-cherry shadow-lg scale-105'
+                  : 'bg-white/80 backdrop-blur-sm text-site-text border border-site-gold/30 hover:bg-site-cream/60 hover:border-site-gold/50 shadow-soft hover:shadow-medium'
               }`}
+              style={{animationDelay: `${i * 0.1}s`}}
             >
-              {category}
+              <span className="relative z-10">{category}</span>
+              {selectedCategory !== category && (
+                <div className="absolute inset-0 bg-gradient-to-r from-site-gold/0 via-site-gold/10 to-site-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              )}
             </button>
           ))}
         </div>
 
         {/* Menu Items Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-          {filteredItems.map((item) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
+          {filteredItems.map((item, i) => (
             <div
               key={item.id}
-              className="bg-coffee-light p-4 lg:p-6 rounded-xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 cursor-pointer group"
+              className="bg-white/90 backdrop-blur-sm p-6 lg:p-8 rounded-3xl shadow-soft hover:shadow-medium overflow-hidden transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 cursor-pointer group border border-site-gold/20 animate-fade-in-up"
               onClick={() => openProductDetails(item)}
+              style={{animationDelay: `${i * 0.1}s`}}
             >
               {/* Product Image */}
-              <div className="aspect-square overflow-hidden relative">
+              <div className="aspect-square overflow-hidden relative rounded-2xl mb-6">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                {/* Floating price badge */}
+                <div className="absolute top-4 right-4 bg-site-gold/90 backdrop-blur-md text-site-cherry px-3 py-2 rounded-full text-sm font-bold shadow-lg">
+                  ${item.price.toFixed(2)}
+                </div>
+
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-site-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <button className="bg-white/90 backdrop-blur-md text-site-primary px-6 py-3 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 hover:bg-site-gold hover:text-site-cherry">
+                    View Details
+                  </button>
+                </div>
               </div>
 
               {/* Product Info */}
-              <div className="p-4 lg:p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-lg lg:text-xl font-semibold text-coffee-primary group-hover:text-coffee-accent transition-colors duration-300">
+              <div>
+                <div className="mb-4">
+                  <h3 className="text-xl lg:text-2xl font-serif font-bold text-site-primary group-hover:text-site-gold transition-colors duration-300 mb-2">
                     {item.name}
                   </h3>
-                  <span className="text-lg lg:text-xl font-bold text-coffee-accent">
-                    ${item.price.toFixed(2)}
+                  <span className="inline-block bg-site-gold/20 text-site-primary text-xs px-3 py-1 rounded-full font-medium border border-site-gold/30">
+                    {item.category}
                   </span>
                 </div>
 
-                <p className="text-coffee-text text-sm lg:text-base mb-4 line-clamp-2 leading-relaxed transition-colors duration-300">
+                <p className="text-site-text/70 text-sm lg:text-base mb-6 line-clamp-2 leading-relaxed">
                   {item.description}
                 </p>
 
-                <div className="flex items-center justify-between">
-                  <span className="inline-block bg-coffee-200 text-coffee-primary text-xs px-3 py-1 rounded-full transition-colors duration-300">
-                    {item.category}
-                  </span>
-
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      addToCart(item);
-                    }}
-                    className="bg-coffee-accent hover:bg-coffee-cherry text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg font-medium text-sm lg:text-base transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:ring-2 focus:ring-coffee-primary focus:ring-offset-2"
-                  >
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    addToCart(item);
+                  }}
+                  className="w-full bg-site-gold hover:bg-site-gold/90 text-site-cherry font-semibold py-3 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:ring-2 focus:ring-site-gold focus:ring-offset-2 group/btn"
+                >
+                  <span className="flex items-center justify-center gap-2">
                     Add to Cart
-                  </button>
-                </div>
+                    <svg className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           ))}
@@ -111,9 +127,9 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
 
         {/* Empty State */}
         {filteredItems.length === 0 && (
-          <div className="text-center py-16">
-            <div className="text-6xl mb-4">☕</div>
-            <p className="text-gray-500 dark:text-gray-400 text-xl transition-colors duration-300">No items found in this category.</p>
+          <div className="text-center py-20 animate-fade-in">
+            <div className="text-8xl mb-6">☕</div>
+            <p className="text-site-text/60 text-2xl font-light">No items found in this category.</p>
           </div>
         )}
       </div>

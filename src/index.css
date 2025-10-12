@@ -1,116 +1,149 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #213547;
-  background-color: #ffffff;
+  color: #2d1f13;
+  background-color: #faf7f0;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Coffee Theme Colors */
-  --coffee-primary: #8B4513;     /* Coffee bean brown (primary) */
-  --coffee-secondary: #F5DEB3;   /* Latte cream (secondary background) */
-  --coffee-accent: #D2691E;      /* Bright caramel (buttons) */
-  --coffee-text: #3E2723;        /* Espresso (text) */
-  --coffee-cherry: #A0522D;      /* Coffee cherry (accent) */
-  --coffee-leaf: #7CB342;       /* Coffee leaf green (accent) */
-  --coffee-light: #FDF5E6;      /* Light cream (background) */
-  --coffee-warm: #FFFAF0;       /* Warm white (background) */
+  /* Premium Coffee Brand Theme Colors */
+  --site-primary: #a68b6b;     /* Rich coffee (primary) */
+  --site-secondary: #eee4d6;   /* Soft beige (secondary background) */
+  --site-accent: #c9b894;      /* Primary warm beige (buttons) */
+  --site-text: #2d1f13;        /* Coffee black (text) */
+  --site-cherry: #8b7357;      /* Dark coffee (accent) */
+  --site-leaf: #708238;       /* Olive accent */
+  --site-light: #faf7f0;      /* Warm cream (background) */
+  --site-warm: #f5f1e8;       /* Light beige (background) */
+  --site-gold: #d4af37;       /* Gold accent */
+  --site-cream: #f8f5f0;      /* Warm cream */
 }
 
 :root.dark {
-  --coffee-primary: #A0522D;     /* Coffee cherry (primary in dark) */
-  --coffee-secondary: #3E2723;   /* Espresso (secondary in dark) */
-  --coffee-accent: #F4A460;      /* Sandy brown (accent in dark) */
-  --coffee-text: #FDF5E6;        /* Light cream (text in dark) */
-  --coffee-cherry: #D2691E;      /* Bright caramel (cherry in dark) */
-  --coffee-leaf: #8BC34A;       /* Light green (leaf in dark) */
-  --coffee-light: #2C1810;       /* Dark coffee (light in dark) */
-  --coffee-warm: #1A0E08;       /* Very dark (warm in dark) */
+  --site-primary: #c9b894;     /* Primary warm beige (primary in dark) */
+  --site-secondary: #6d5c47;   /* Darkest coffee (secondary in dark) */
+  --site-accent: #d4c4a8;      /* Warm taupe (accent in dark) */
+  --site-text: #f8f5f0;        /* Warm cream (text in dark) */
+  --site-cherry: #8b7357;      /* Dark coffee (cherry in dark) */
+  --site-leaf: #a68b6b;       /* Rich coffee (leaf in dark) */
+  --site-light: #5d4e37;       /* Coffee gray (light in dark) */
+  --site-warm: #6d5c47;       /* Darkest coffee (warm in dark) */
+  --site-gold: #f4e4a6;       /* Light gold accent */
+  --site-cream: #2d1f13;      /* Coffee black (cream in dark) */
+}
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--site-cream);
+  color: var(--site-text);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.75em 1.5em;
   font-size: 1em;
   font-weight: 500;
-  background-color: #1a1a1a;
+  font-family: inherit;
+  background-color: var(--site-accent);
+  color: var(--site-text);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: var(--site-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px solid var(--site-gold);
+  outline-offset: 2px;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #2d1f13;
+    background-color: #faf7f0;
   }
   a:hover {
-    color: #747bff;
+    color: var(--site-primary);
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--site-accent);
   }
 }
-.text-coffee-primary { color: var(--coffee-primary); }
-.text-coffee-accent { color: var(--coffee-accent); }
-.text-coffee-text { color: var(--coffee-text); }
-.text-coffee-cherry { color: var(--coffee-cherry); }
-.text-coffee-leaf { color: var(--coffee-leaf); }
-.bg-coffee-primary { background-color: var(--coffee-primary); }
-.bg-coffee-secondary { background-color: var(--coffee-secondary); }
-.bg-coffee-accent { background-color: var(--coffee-accent); }
-.bg-coffee-text { background-color: var(--coffee-text); }
-.bg-coffee-cherry { background-color: var(--coffee-cherry); }
-.bg-coffee-leaf { background-color: var(--coffee-leaf); }
-.bg-coffee-light { background-color: var(--coffee-light); }
-.bg-coffee-warm { background-color: var(--coffee-warm); }
 
-.border-coffee-primary { border-color: var(--coffee-primary); }
-.border-coffee-accent { border-color: var(--coffee-accent); }
-.border-coffee-cherry { border-color: var(--coffee-cherry); }
+/* Tailwind CSS utility classes for the new color scheme */
+.text-site-primary { color: var(--site-primary); }
+.text-site-accent { color: var(--site-accent); }
+.text-site-text { color: var(--site-text); }
+.text-site-cherry { color: var(--site-cherry); }
+.text-site-leaf { color: var(--site-leaf); }
+.text-site-gold { color: var(--site-gold); }
+.bg-site-primary { background-color: var(--site-primary); }
+.bg-site-secondary { background-color: var(--site-secondary); }
+.bg-site-accent { background-color: var(--site-accent); }
+.bg-site-text { background-color: var(--site-text); }
+.bg-site-cherry { background-color: var(--site-cherry); }
+.bg-site-leaf { background-color: var(--site-leaf); }
+.bg-site-light { background-color: var(--site-light); }
+.bg-site-warm { background-color: var(--site-warm); }
+.bg-site-gold { background-color: var(--site-gold); }
+.bg-site-cream { background-color: var(--site-cream); }
 
-.hover\:text-coffee-primary:hover { color: var(--coffee-primary); }
-.hover\:text-coffee-accent:hover { color: var(--coffee-accent); }
-.hover\:text-coffee-cherry:hover { color: var(--coffee-cherry); }
-.hover\:text-coffee-leaf:hover { color: var(--coffee-leaf); }
+.border-site-primary { border-color: var(--site-primary); }
+.border-site-accent { border-color: var(--site-accent); }
+.border-site-cherry { border-color: var(--site-cherry); }
+.border-site-gold { border-color: var(--site-gold); }
 
-.hover\:bg-coffee-primary:hover { background-color: var(--coffee-primary); }
-.hover\:bg-coffee-accent:hover { background-color: var(--coffee-accent); }
-.hover\:bg-coffee-cherry:hover { background-color: var(--coffee-cherry); }
-.hover\:bg-coffee-leaf:hover { background-color: var(--coffee-leaf); }
+.hover\:text-site-primary:hover { color: var(--site-primary); }
+.hover\:text-site-accent:hover { color: var(--site-accent); }
+.hover\:text-site-cherry:hover { color: var(--site-cherry); }
+.hover\:text-site-leaf:hover { color: var(--site-leaf); }
+.hover\:text-site-gold:hover { color: var(--site-gold); }
 
-.focus\:ring-coffee-primary:focus { --tw-ring-color: var(--coffee-primary); }
-.focus\:ring-coffee-accent:focus { --tw-ring-color: var(--coffee-accent); }
+.hover\:bg-site-primary:hover { background-color: var(--site-primary); }
+.hover\:bg-site-accent:hover { background-color: var(--site-accent); }
+.hover\:bg-site-cherry:hover { background-color: var(--site-cherry); }
+.hover\:bg-site-leaf:hover { background-color: var(--site-leaf); }
+.hover\:bg-site-gold:hover { background-color: var(--site-gold); }
 
-/* Custom Gradient Background */
-.bg-coffee-gradient {
-  background: #2A7B9B;
-  background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 6%, rgba(237, 221, 83, 1) 100%);
+.focus\:ring-site-primary:focus { --tw-ring-color: var(--site-primary); }
+.focus\:ring-site-accent:focus { --tw-ring-color: var(--site-accent); }
+.focus\:ring-site-gold:focus { --tw-ring-color: var(--site-gold); }
+
+/* Custom Gradient Backgrounds */
+.bg-site-gradient {
+  background: linear-gradient(135deg, #a68b6b 0%, #c9b894 50%, #d4af37 100%);
 }
+
+.bg-warm-gradient {
+  background: linear-gradient(135deg, #faf7f0 0%, #f5f1e8 50%, #eee4d6 100%);
+}
+
+.bg-coffee-gradient {
+  background: linear-gradient(135deg, #2d1f13 0%, #5d4e37 50%, #8b7357 100%);
 }
