@@ -33,8 +33,8 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl lg:text-6xl font-serif font-bold text-site-primary mb-6">Our Menu</h1>
-          <p className="text-xl lg:text-2xl text-site-text/80 max-w-3xl mx-auto leading-relaxed font-light">
+          <h1 className="text-2xl lg:text-3xl font-serif font-bold text-site-primary mb-4">Our Menu</h1>
+          <p className="text-base lg:text-lg text-site-text/80 max-w-3xl mx-auto leading-relaxed font-light">
             Discover our carefully crafted selection of premium coffee drinks, fresh pastries, and delicious bites.
           </p>
         </div>
@@ -45,7 +45,7 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 lg:px-8 py-3 lg:py-4 rounded-2xl font-medium transition-all duration-500 transform hover:scale-105 text-lg relative overflow-hidden group animate-fade-in-up ${
+              className={`px-4 lg:px-6 py-2 lg:py-3 rounded-2xl font-medium transition-all duration-500 transform hover:scale-105 text-sm relative overflow-hidden group animate-fade-in-up ${
                 selectedCategory === category
                   ? 'bg-site-gold text-site-cherry shadow-lg scale-105'
                   : 'bg-white/80 backdrop-blur-sm text-site-text border border-site-gold/30 hover:bg-site-cream/60 hover:border-site-gold/50 shadow-soft hover:shadow-medium'
@@ -85,7 +85,7 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-site-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button className="bg-white/90 backdrop-blur-md text-site-primary px-6 py-3 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 hover:bg-site-gold hover:text-site-cherry">
+                  <button className="bg-white/90 backdrop-blur-md text-site-primary px-4 py-2 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 hover:bg-site-gold hover:text-site-cherry text-sm">
                     View Details
                   </button>
                 </div>
@@ -94,7 +94,7 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
               {/* Product Info */}
               <div>
                 <div className="mb-4">
-                  <h3 className="text-xl lg:text-2xl font-serif font-bold text-site-primary group-hover:text-site-gold transition-colors duration-300 mb-2">
+                  <h3 className="text-lg lg:text-xl font-serif font-bold text-site-primary group-hover:text-site-gold transition-colors duration-300 mb-2">
                     {item.name}
                   </h3>
                   <span className="inline-block bg-site-gold/20 text-site-primary text-xs px-3 py-1 rounded-full font-medium border border-site-gold/30">
@@ -111,7 +111,7 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
                     e.stopPropagation();
                     addToCart(item);
                   }}
-                  className="w-full bg-site-gold hover:bg-site-gold/90 text-site-cherry font-semibold py-3 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:ring-2 focus:ring-site-gold focus:ring-offset-2 group/btn"
+                  className="w-full bg-site-gold hover:bg-site-gold/90 text-site-cherry font-semibold py-2 px-4 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:ring-2 focus:ring-site-gold focus:ring-offset-2 group/btn text-sm"
                 >
                   <span className="flex items-center justify-center gap-2">
                     Add to Cart
@@ -129,7 +129,7 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
         {filteredItems.length === 0 && (
           <div className="text-center py-20 animate-fade-in">
             <div className="text-8xl mb-6">☕</div>
-            <p className="text-site-text/60 text-2xl font-light">No items found in this category.</p>
+            <p className="text-site-text/60 text-lg font-light">No items found in this category.</p>
           </div>
         )}
       </div>

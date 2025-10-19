@@ -30,10 +30,10 @@ const Testimonials: React.FC = () => {
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl lg:text-6xl font-serif font-bold text-site-primary mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-site-primary mb-4">
             What Our Customers Say
           </h2>
-          <p className="text-2xl text-site-text/80 leading-relaxed max-w-3xl mx-auto font-light">
+          <p className="text-lg sm:text-xl text-site-text/80 leading-relaxed max-w-3xl mx-auto font-light">
             Real stories from coffee lovers who have experienced our passion for perfection.
           </p>
         </div>
@@ -67,12 +67,12 @@ const Testimonials: React.FC = () => {
                 </div>
               </div>
 
-              <blockquote className="text-site-text/80 text-lg leading-relaxed mb-6 font-light italic">
+              <blockquote className="text-site-text/80 text-base lg:text-lg leading-relaxed mb-6 font-light italic">
                 "{testimonial.comment}"
               </blockquote>
 
               <div className="border-t border-site-gold/20 pt-4">
-                <h4 className="font-serif font-bold text-xl text-site-primary">{testimonial.name}</h4>
+                <h4 className="font-serif font-bold text-lg text-site-primary">{testimonial.name}</h4>
                 <p className="text-site-text/60 text-sm mt-1">Verified Customer</p>
               </div>
             </div>
@@ -81,10 +81,10 @@ const Testimonials: React.FC = () => {
 
         {/* Call to action */}
         <div className="text-center mt-16 animate-fade-in">
-          <p className="text-site-text/70 text-xl mb-8 font-light">
+          <p className="text-site-text/70 text-lg mb-6 font-light">
             Join thousands of satisfied coffee lovers
           </p>
-          <button className="bg-site-gold hover:bg-site-gold/90 text-site-cherry font-bold py-4 px-10 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
+          <button className="bg-site-gold hover:bg-site-gold/90 text-site-cherry font-bold py-3 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base">
             Leave a Review
           </button>
         </div>

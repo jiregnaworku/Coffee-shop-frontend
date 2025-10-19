@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative bg-gradient-to-br from-site-cherry via-site-primary to-site-gold text-site-cream py-32 lg:py-48 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-site-cherry via-site-primary to-site-gold text-site-cream py-0 lg:py-0 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-site-gold/30"></div>
       <div className="absolute top-20 left-10 w-72 h-72 bg-site-gold/10 rounded-full blur-3xl animate-float"></div>
@@ -11,11 +11,11 @@ const Hero: React.FC = () => {
       <div className="relative container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center max-w-7xl z-10">
         {/* Text Section */}
         <div className="lg:w-1/2 text-center lg:text-left animate-fade-in-up">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold mb-8 leading-tight tracking-tight text-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-6 leading-tight tracking-tight text-shadow-lg">
             Artisan Coffee
             <span className="block text-site-gold">Perfected</span>
           </h1>
-          <p className="text-xl sm:text-2xl lg:text-3xl mb-12 text-site-cream/90 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
+          <p className="text-base sm:text-lg lg:text-xl mb-8 text-site-cream/90 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
             Discover the world's finest beans, expertly roasted and crafted into
             exceptional beverages that awaken your senses.
           </p>
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
                 const menuSection = document.getElementById('menu-section');
                 menuSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
-              className="group bg-site-gold hover:bg-site-gold/90 text-site-cherry font-semibold py-5 px-12 rounded-2xl shadow-2xl hover:shadow-site-gold/25 transform hover:-translate-y-2 transition-all duration-500 text-lg"
+              className="group bg-site-gold hover:bg-site-gold/90 text-site-cherry font-semibold py-4 px-8 rounded-2xl shadow-2xl hover:shadow-site-gold/25 transform hover:-translate-y-2 transition-all duration-500 text-base"
             >
               <span className="flex items-center gap-3">
                 Explore Menu
@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
                 const aboutSection = document.getElementById('about-section');
                 aboutSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
-              className="group border-2 border-site-cream/80 text-site-cream hover:bg-site-cream hover:text-site-cherry font-semibold py-5 px-12 rounded-2xl transition-all duration-500 text-lg backdrop-blur-sm hover:shadow-xl"
+              className="group border-2 border-site-cream/80 text-site-cream hover:bg-site-cream hover:text-site-cherry font-semibold py-4 px-8 rounded-2xl transition-all duration-500 text-base backdrop-blur-sm hover:shadow-xl"
             >
               <span className="flex items-center gap-3">
                 Our Story
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Image Section */}
-        <div className="lg:w-1/2 mb-16 lg:mb-0 flex justify-center animate-fade-in-right">
+        <div className="lg:w-1/2 mb-12 lg:mb-0 flex justify-center animate-fade-in-right">
           <div className="relative w-full max-w-2xl">
             {/* Decorative elements */}
             <div className="absolute -inset-6 bg-gradient-to-tr from-site-gold/20 via-site-cream/10 to-transparent rounded-3xl blur-2xl animate-pulse-slow"></div>
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
               <img
                 src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80"
                 alt="Premium artisan coffee"
-                className="relative w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
+                className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
 
