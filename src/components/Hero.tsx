@@ -56,13 +56,13 @@ const Hero: React.FC = () => {
         {/* Image Section */}
         <div className="lg:w-1/2 mb-12 lg:mb-0 flex justify-center animate-fade-in-right">
           <div className="relative w-full max-w-2xl">
-            {/* Decorative elements */}
-            <div className="absolute -inset-6 bg-gradient-to-tr from-site-gold/20 via-site-cream/10 to-transparent rounded-3xl blur-2xl animate-pulse-slow"></div>
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-site-gold/20 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-site-cream/20 rounded-full animate-float" style={{animationDelay: '3s'}}></div>
+            {/* Decorative arc elements - moved outside image container for better visibility */}
+            <div className="absolute -inset-6 bg-gradient-to-tr from-site-gold/20 via-site-cream/10 to-transparent rounded-3xl blur-2xl animate-pulse-slow z-0"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-site-gold/20 rounded-full animate-float z-10" style={{animationDelay: '1s'}}></div>
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-site-cream/20 rounded-full animate-float z-10" style={{animationDelay: '3s'}}></div>
 
             {/* Main coffee image */}
-            <div className="relative overflow-hidden rounded-3xl shadow-2xl backdrop-blur-sm bg-white/10">
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl backdrop-blur-sm bg-white/10 z-20">
               <img
                 src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80"
                 alt="Premium artisan coffee"
@@ -70,11 +70,10 @@ const Hero: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
 
-              {/* Floating badge */}
-              <div className="absolute top-6 left-6 bg-site-gold/90 backdrop-blur-md text-site-cherry px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-fade-in">
-                Premium Blend
-              </div>
             </div>
+
+            {/* Additional decorative arc element */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border-2 border-site-gold/30 rounded-full animate-ping z-0" style={{animationDuration: '3s'}}></div>
           </div>
         </div>
       </div>
